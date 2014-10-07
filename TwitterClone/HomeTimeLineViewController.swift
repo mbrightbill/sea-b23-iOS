@@ -7,21 +7,66 @@
 //
 
 import UIKit
+import Accounts
+import Social
 
 class HomeTimeLineViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     var tweets : [Tweet]?
+    var twitterAccount : ACAccount?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let path = NSBundle.mainBundle().pathForResource("tweet", ofType: "json") {
-            var error : NSError?
-            let jsonData = NSData(contentsOfFile: path)
-            
-            self.tweets = Tweet.parseJSONDataIntoTweets(jsonData)
+        
+        let accountStore = ACAccountStore()
+        let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
+        
+        accountStore.requestAccessToAccountsWithType(accountType, options: nil) { (granted : Bool, error : NSError!) -> Void in
+            if granted {
+                
+                let accounts = accountStore.accountsWithAccountType(accountType)
+                self.twitterAccount = accounts.first as ACAccount?
+                //setup our twitter request
+                let url = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
+                let twitterRequest = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: url, parameters: nil)
+                twitterRequest.account = self.twitterAccount
+                
+                twitterRequest.performRequestWithHandler({ (data, httpResponse, error) -> Void in
+                    
+                    switch httpResponse.statusCode {
+                    case 200...299:
+                        self.tweets = Tweet.parseJSONDataIntoTweets(data)
+                        println(self.tweets?.count)
+                        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                            self.tableView.reloadData()
+                        })
+                        //right here, we are on a background queue aka thread
+                    case 400...499:
+                        println("this is the clients fault")
+                        println(httpResponse.description)
+                    case 500...599:
+                        println("this is the servers fault")
+                    default:
+                        println("something bad happened")
+                    }
+                    
+                })
+            }
         }
+        
+        println("Hello")
+        
+
+//        if let path = NSBundle.mainBundle().pathForResource("tweet", ofType: "json") {
+//            var error : NSError?
+//            let jsonData = NSData(contentsOfFile: path)
+//            
+//            self.tweets = Tweet.parseJSONDataIntoTweets(jsonData)
+//        }
+        
+        
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
