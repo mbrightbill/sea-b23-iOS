@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2BC358719E5B4B600966D14 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BC358619E5B4B600966D14 /* NetworkController.swift */; };
 		A2EF67A719E3097E001EB74F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF67A619E3097E001EB74F /* AppDelegate.swift */; };
 		A2EF67AA19E3097E001EB74F /* TwitterClone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2EF67A819E3097E001EB74F /* TwitterClone.xcdatamodeld */; };
 		A2EF67AF19E3097E001EB74F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2EF67AD19E3097E001EB74F /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A2BC358619E5B4B600966D14 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		A2EF67A119E3097E001EB74F /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2EF67A519E3097E001EB74F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2EF67A619E3097E001EB74F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				A2EF67CC19E309E9001EB74F /* HomeTimeLineViewController.swift */,
+				A2BC358619E5B4B600966D14 /* NetworkController.swift */,
 			);
 			name = "Controller Layer";
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2BC358719E5B4B600966D14 /* NetworkController.swift in Sources */,
 				A2EF67A719E3097E001EB74F /* AppDelegate.swift in Sources */,
 				A2EF67AA19E3097E001EB74F /* TwitterClone.xcdatamodeld in Sources */,
 				A2EF67CD19E309E9001EB74F /* HomeTimeLineViewController.swift in Sources */,
@@ -375,6 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TwitterClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -385,6 +390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TwitterClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -443,6 +449,7 @@
 				A2EF67C519E3097E001EB74F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A2EF67C619E3097E001EB74F /* Build configuration list for PBXNativeTarget "TwitterCloneTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +458,7 @@
 				A2EF67C819E3097E001EB74F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
