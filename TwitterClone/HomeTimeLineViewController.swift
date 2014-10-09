@@ -7,21 +7,37 @@
 //
 
 import UIKit
+import Accounts
+import Social
 
-class HomeTimeLineViewController: UIViewController, UITableViewDataSource {
+class HomeTimeLineViewController: UIViewController, UITableViewDataSource, UIApplicationDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     var tweets : [Tweet]?
+    var twitterAccount : ACAccount?
+    var networkController : NetworkController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let path = NSBundle.mainBundle().pathForResource("tweet", ofType: "json") {
-            var error : NSError?
-            let jsonData = NSData(contentsOfFile: path)
-            
-            self.tweets = Tweet.parseJSONDataIntoTweets(jsonData)
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        self.networkController = appDelegate.networkController
+        
+        self.networkController.fetchHomeTimeLine { (errorDescription : String?, tweets : [Tweet]?) -> (Void) in
+            if errorDescription != nil {
+                //alert the user that something went wrong
+            } else {
+                self.tweets = tweets
+                self.tableView.reloadData()
+            }
         }
+        println("Hello")
+//        if let path = NSBundle.mainBundle().pathForResource("tweet", ofType: "json") {
+//            var error : NSError?
+//            let jsonData = NSData(contentsOfFile: path)
+//            
+//            self.tweets = Tweet.parseJSONDataIntoTweets(jsonData)
+//        }
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
