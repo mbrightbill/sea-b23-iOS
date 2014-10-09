@@ -6,14 +6,18 @@
 //  Copyright (c) 2014 Code Fellows. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Tweet {
     
     var text : String
+    var avatarURL : String
+    var avatarImage : UIImage?
     
     init ( tweetInfo : NSDictionary) {
         self.text = tweetInfo["text"] as String
+        let userInfo = tweetInfo["user"] as NSDictionary
+        self.avatarURL = userInfo["profile_image_url"] as String
     }
     
     class func parseJSONDataIntoTweets(rawJSONData : NSData ) -> [Tweet]? {

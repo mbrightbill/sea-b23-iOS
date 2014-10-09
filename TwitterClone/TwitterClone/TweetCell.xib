@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="ASU-tn-Hdv" customClass="TweetCell" customModule="TwitterClone" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ASU-tn-Hdv" id="WIm-Mg-TbT">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pc0-l2-tPz">
+                        <rect key="frame" x="8" y="8" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="49S-5X-fJ8"/>
+                            <constraint firstAttribute="width" constant="100" id="dI5-Lg-cTz"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHC-zW-v5H">
+                        <rect key="frame" x="116" y="8" width="276" height="100"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aHC-zW-v5H" firstAttribute="trailing" secondItem="WIm-Mg-TbT" secondAttribute="trailingMargin" id="70f-vf-KjE"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="aHC-zW-v5H" secondAttribute="bottom" constant="4" id="8ac-ak-dRK"/>
+                    <constraint firstItem="aHC-zW-v5H" firstAttribute="leading" secondItem="pc0-l2-tPz" secondAttribute="trailing" constant="8" id="CQ7-fa-Jm7"/>
+                    <constraint firstItem="pc0-l2-tPz" firstAttribute="leading" secondItem="WIm-Mg-TbT" secondAttribute="leadingMargin" id="gDA-W0-nF6"/>
+                    <constraint firstItem="aHC-zW-v5H" firstAttribute="top" secondItem="WIm-Mg-TbT" secondAttribute="topMargin" id="pKj-qt-rhZ"/>
+                    <constraint firstItem="pc0-l2-tPz" firstAttribute="top" secondItem="WIm-Mg-TbT" secondAttribute="topMargin" id="qFu-iq-fuw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImageView" destination="pc0-l2-tPz" id="2NI-CO-SJA"/>
+                <outlet property="tweetLabel" destination="aHC-zW-v5H" id="eoU-nh-ZBC"/>
+            </connections>
+            <point key="canvasLocation" x="88" y="427"/>
+        </tableViewCell>
+    </objects>
+</document>
