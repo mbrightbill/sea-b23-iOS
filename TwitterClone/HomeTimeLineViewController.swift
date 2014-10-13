@@ -34,17 +34,16 @@ class HomeTimeLineViewController: UIViewController, UITableViewDataSource, UIApp
             }
         }
         println("Hello")
-//        if let path = NSBundle.mainBundle().pathForResource("tweet", ofType: "json") {
-//            var error : NSError?
-//            let jsonData = NSData(contentsOfFile: path)
-//            
-//            self.tweets = Tweet.parseJSONDataIntoTweets(jsonData)
-//        }
+        if let path = NSBundle.mainBundle().pathForResource("tweet", ofType: "json") {
+            var error : NSError?
+            let jsonData = NSData(contentsOfFile: path)
+            
+            self.tweets = Tweet.parseJSONDataIntoTweets(jsonData)
+        }
         
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if self.tweets != nil {
             return self.tweets!.count
         } else {
