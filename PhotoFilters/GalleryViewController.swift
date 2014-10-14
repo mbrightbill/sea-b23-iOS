@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol GalleryDelegate {
+protocol GalleryDelegate : class {
     func didTapOnPicture(image : UIImage)
 }
 
@@ -16,7 +16,7 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var delegate: GalleryDelegate?
+     weak var delegate: GalleryDelegate?
 //    var myParentViewController : ViewController?
 //    var myProfileParentViewController : ProfileViewController
     
