@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A21E30EB19ED901F00A29A36 /* FilterThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21E30EA19ED901F00A29A36 /* FilterThumbnailCell.swift */; };
+		A21E30ED19ED916800A29A36 /* FilterThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21E30EC19ED916800A29A36 /* FilterThumbnail.swift */; };
+		A21E30EF19EDA03D00A29A36 /* CoreDataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21E30EE19EDA03D00A29A36 /* CoreDataSeeder.swift */; };
+		A21E30F519EDA1A100A29A36 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21E30F419EDA1A100A29A36 /* Filter.swift */; };
 		A282E88F19EC3471000E7F13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282E88E19EC3471000E7F13 /* AppDelegate.swift */; };
 		A282E89219EC3471000E7F13 /* PhotoFilters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A282E89019EC3471000E7F13 /* PhotoFilters.xcdatamodeld */; };
 		A282E89419EC3471000E7F13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282E89319EC3471000E7F13 /* ViewController.swift */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A21E30EA19ED901F00A29A36 /* FilterThumbnailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterThumbnailCell.swift; sourceTree = "<group>"; };
+		A21E30EC19ED916800A29A36 /* FilterThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterThumbnail.swift; sourceTree = "<group>"; };
+		A21E30EE19EDA03D00A29A36 /* CoreDataSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataSeeder.swift; sourceTree = "<group>"; };
+		A21E30F419EDA1A100A29A36 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		A282E88919EC3471000E7F13 /* PhotoFilters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoFilters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A282E88D19EC3471000E7F13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A282E88E19EC3471000E7F13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +111,7 @@
 				A282E88E19EC3471000E7F13 /* AppDelegate.swift */,
 				A282E89819EC3471000E7F13 /* Images.xcassets */,
 				A282E89019EC3471000E7F13 /* PhotoFilters.xcdatamodeld */,
+				A21E30F419EDA1A100A29A36 /* Filter.swift */,
 				A282E88C19EC3471000E7F13 /* Supporting Files */,
 			);
 			path = PhotoFilters;
@@ -143,6 +152,8 @@
 		A282E8B119EC347A000E7F13 /* Model Layer */ = {
 			isa = PBXGroup;
 			children = (
+				A21E30EC19ED916800A29A36 /* FilterThumbnail.swift */,
+				A21E30EE19EDA03D00A29A36 /* CoreDataSeeder.swift */,
 			);
 			name = "Model Layer";
 			sourceTree = "<group>";
@@ -152,7 +163,7 @@
 			children = (
 				A282E89A19EC3471000E7F13 /* LaunchScreen.xib */,
 				A282E89519EC3471000E7F13 /* Main.storyboard */,
-				A282E8B419EC3C92000E7F13 /* GalleryViewController.swift */,
+				A21E30EA19ED901F00A29A36 /* FilterThumbnailCell.swift */,
 				A282E8C419EC4220000E7F13 /* GalleryCell.swift */,
 			);
 			name = "View Layer";
@@ -162,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				A282E89319EC3471000E7F13 /* ViewController.swift */,
+				A282E8B419EC3C92000E7F13 /* GalleryViewController.swift */,
 			);
 			name = "Controller Layer";
 			sourceTree = "<group>";
@@ -273,11 +285,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21E30EB19ED901F00A29A36 /* FilterThumbnailCell.swift in Sources */,
 				A282E89419EC3471000E7F13 /* ViewController.swift in Sources */,
+				A21E30EF19EDA03D00A29A36 /* CoreDataSeeder.swift in Sources */,
 				A282E8C519EC4220000E7F13 /* GalleryCell.swift in Sources */,
 				A282E8B519EC3C92000E7F13 /* GalleryViewController.swift in Sources */,
 				A282E89219EC3471000E7F13 /* PhotoFilters.xcdatamodeld in Sources */,
 				A282E88F19EC3471000E7F13 /* AppDelegate.swift in Sources */,
+				A21E30F519EDA1A100A29A36 /* Filter.swift in Sources */,
+				A21E30ED19ED916800A29A36 /* FilterThumbnail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +489,7 @@
 				A282E8AD19EC3471000E7F13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A282E8AE19EC3471000E7F13 /* Build configuration list for PBXNativeTarget "PhotoFiltersTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +498,7 @@
 				A282E8B019EC3471000E7F13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
