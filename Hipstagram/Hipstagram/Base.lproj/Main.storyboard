@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hipstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n1t-vB-JXM">
+                                <rect key="frame" x="16" y="20" width="568" height="480"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lK6-Be-1VG">
+                                <rect key="frame" x="277" y="562" width="45" height="30"/>
+                                <state key="normal" title="Hipme">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hipmePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fRB-km-K34"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z74-Jc-Pgi">
+                                <rect key="frame" x="0.0" y="345" width="600" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="tSi-gU-Rha"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kvN-nC-qrI">
+                                    <size key="itemSize" width="51" height="55"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="THUMBNAIL_CELL" id="5A9-Uw-6dN" customClass="ThumbnailCell" customModule="Hipstagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="51" height="55"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="puJ-Mi-j72">
+                                                    <rect key="frame" x="0.0" y="0.0" width="51" height="55"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="imageView" destination="puJ-Mi-j72" id="WwN-IA-Wag"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n1t-vB-JXM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MuI-pM-vUv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lK6-Be-1VG" secondAttribute="bottom" constant="8" id="NFE-rB-FZQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z74-Jc-Pgi" secondAttribute="trailing" constant="-16" id="Zae-AR-fk2"/>
+                            <constraint firstItem="z74-Jc-Pgi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="dbI-aJ-cpn"/>
+                            <constraint firstAttribute="centerX" secondItem="lK6-Be-1VG" secondAttribute="centerX" id="h8U-q2-YSM"/>
+                            <constraint firstItem="n1t-vB-JXM" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="iUF-tr-n5S"/>
+                            <constraint firstItem="n1t-vB-JXM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jCf-Ra-0ib"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="z74-Jc-Pgi" secondAttribute="bottom" constant="200" id="pe7-GS-eSD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="n1t-vB-JXM" secondAttribute="bottom" constant="100" id="qSM-HS-3QJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="z74-Jc-Pgi" id="gj0-sf-0Vk"/>
+                        <outlet property="collectionViewBottomConstraint" destination="pe7-GS-eSD" id="KY9-gg-puf"/>
+                        <outlet property="imageView" destination="n1t-vB-JXM" id="fHY-b1-2cK"/>
+                        <segue destination="61O-Ph-3Bf" kind="presentation" identifier="SHOW_GALLERY" id="zdU-wR-TLh"/>
+                        <segue destination="jA5-Wt-ppK" kind="presentation" identifier="SHOW_PHOTOS_FRAMEWORK" id="Fky-yL-mAg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="299" y="660"/>
+        </scene>
+        <!--Gallery View Controller-->
+        <scene sceneID="rVb-kz-CQG">
+            <objects>
+                <viewController id="61O-Ph-3Bf" customClass="GalleryViewController" customModule="Hipstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R7t-h9-Oqs"/>
+                        <viewControllerLayoutGuide type="bottom" id="i2F-f4-dm5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kBU-5o-I5h">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="38O-H2-som">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pyN-KP-GbO">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GALLERY_CELL" id="OPx-3W-mfw" customClass="GalleryCell" customModule="Hipstagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rxA-hG-YAb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="rxA-hG-YAb" secondAttribute="trailing" constant="-8" id="2lR-Du-uea"/>
+                                            <constraint firstItem="rxA-hG-YAb" firstAttribute="leading" secondItem="OPx-3W-mfw" secondAttribute="leadingMargin" constant="-8" id="Pou-tc-oH6"/>
+                                            <constraint firstItem="rxA-hG-YAb" firstAttribute="top" secondItem="OPx-3W-mfw" secondAttribute="topMargin" constant="-8" id="bAr-t3-cAK"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="rxA-hG-YAb" secondAttribute="bottom" constant="-8" id="xL1-GH-5co"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="rxA-hG-YAb" id="Ds3-lk-SRU"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="38O-H2-som" firstAttribute="leading" secondItem="kBU-5o-I5h" secondAttribute="leadingMargin" constant="-16" id="DLn-ua-Y8B"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="38O-H2-som" secondAttribute="trailing" constant="-16" id="HWj-p0-wfa"/>
+                            <constraint firstItem="i2F-f4-dm5" firstAttribute="top" secondItem="38O-H2-som" secondAttribute="bottom" id="TPI-zr-19r"/>
+                            <constraint firstItem="38O-H2-som" firstAttribute="top" secondItem="kBU-5o-I5h" secondAttribute="topMargin" id="drv-AI-ruu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="38O-H2-som" id="22C-8d-Xtj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="77i-BY-Alg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1158" y="425"/>
+        </scene>
+        <!--Photos Framework View Controller-->
+        <scene sceneID="Xdj-Pz-4Hg">
+            <objects>
+                <viewController id="jA5-Wt-ppK" customClass="PhotosFrameworkViewController" customModule="Hipstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w9k-ZU-Ixc"/>
+                        <viewControllerLayoutGuide type="bottom" id="vgk-xj-xEn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="neg-GK-Eva">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EjY-HA-IvG">
+                                <rect key="frame" x="0.0" y="8" width="600" height="592"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MQL-9j-NZC">
+                                    <size key="itemSize" width="97" height="113"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PHOTOS_CELL" id="irO-DX-Xp4" customClass="PhotosFrameworkCell" customModule="Hipstagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="113"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m3Y-IA-pAB">
+                                                    <rect key="frame" x="0.0" y="8" width="100" height="100"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottomMargin" secondItem="m3Y-IA-pAB" secondAttribute="bottom" constant="-3" id="OoG-oS-hl7"/>
+                                            <constraint firstItem="m3Y-IA-pAB" firstAttribute="top" secondItem="irO-DX-Xp4" secondAttribute="topMargin" id="RTW-JA-ldn"/>
+                                            <constraint firstItem="m3Y-IA-pAB" firstAttribute="leading" secondItem="irO-DX-Xp4" secondAttribute="leadingMargin" constant="-8" id="YiX-6X-WDJ"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="m3Y-IA-pAB" secondAttribute="trailing" constant="-11" id="uth-Mx-4R9"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="m3Y-IA-pAB" id="vMY-ce-LD1"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="jA5-Wt-ppK" id="aKk-CA-xds"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="EjY-HA-IvG" secondAttribute="trailing" id="bls-Zt-IE0"/>
+                            <constraint firstItem="vgk-xj-xEn" firstAttribute="top" secondItem="EjY-HA-IvG" secondAttribute="bottom" id="hxo-vI-z77"/>
+                            <constraint firstItem="EjY-HA-IvG" firstAttribute="leading" secondItem="neg-GK-Eva" secondAttribute="leading" id="j6w-wa-X05"/>
+                            <constraint firstItem="EjY-HA-IvG" firstAttribute="top" secondItem="neg-GK-Eva" secondAttribute="top" constant="8" id="vQl-wX-vqT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="EjY-HA-IvG" id="VuS-09-DcL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nTd-QZ-r36" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
